@@ -94,5 +94,9 @@ async def uses(ctx):
     with open ("uses.txt", "r") as myfile:
         await ctx.respond(myfile.read())
 
+@bot.slash_command(name="ping", description="This command pings the bot and returns latency!")
+async def ping(ctx):
+    ctx.respond(f"Pong {round(bot.latency, 1)}")
+
 # Run the bot using the token
 bot.run(TOKEN)
