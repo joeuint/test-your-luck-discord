@@ -96,7 +96,7 @@ async def uses(ctx):
 
 @bot.slash_command(name="ping", description="This command pings the bot and returns latency!")
 async def ping(ctx):
-    await ctx.respond(f"Pong {round(bot.latency * 100)}ms", ephemeral=True)
+    await ctx.respond(f"Pong {round(bot.latency * 1000)}ms", ephemeral=True)
 
 # Run the bot using the token
 bot.run(TOKEN)
