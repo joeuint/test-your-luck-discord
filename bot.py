@@ -2,10 +2,13 @@
 import discord
 from discord import commands
 import dotenv
+import pytz
 import random
 import os
 from uuid import uuid4
 import datetime
+
+tz = pytz.timezone('America/Toronto')
 
 def time_in_range(start, end, current):
     """Returns whether current is in the range [start, end]"""
@@ -41,9 +44,8 @@ async def test_luck(ctx):
         await ctx.respond("Wrong channel buddy", ephemeral=True)
         return
 
-    if not time_in_range(OPEN, CLOSE, datetime.datetime.now().time()):
-        formatted_open = datetime.time()
-        await ctx.respond(f"Test Your Luck is closed! It opens at {OPEN.strftime('%I:%M %p')} and closes at {CLOSE.strftime('%I:%M %p')}")
+    if not time_in_range(OPEN, CLOSE, datetime.datetime.now(tz).time()):
+        await ctx.respond(f"Test Your Luck is closed! It opens at {OPEN.strftime('%I:%M %p')} and closes at {CLOSE.strftime('%I:%M %p')}", ephemeral=True)
         return
 
     # Generate a random number
