@@ -6,6 +6,7 @@ cd $BASEDIR
 
 # Confirm
 read -p "Hello, this script pulls from git and redeploys the bot using pm2. Would you like to continue? (y/N) " -n 1 -r
+echo 
 
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
