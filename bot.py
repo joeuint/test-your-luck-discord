@@ -49,7 +49,7 @@ async def test_luck(ctx):
         return
 
     # Generate a random number
-    rand_num = random.randint(69, 69)
+    rand_num = random.randint(0, MAX)
 
     entry_number = None
 
