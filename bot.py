@@ -89,7 +89,7 @@ async def test_luck(ctx):
 @bot.slash_command(name="uses", description="The amount of times test-luck was used")
 async def uses(ctx):
     with open ("uses.txt", "r") as myfile:
-        await ctx.respond(myfile.read())
+        await ctx.respond(myfile.read(), ephemeral=True)
 
 @bot.slash_command(name="ping", description="This command pings the bot and returns latency!")
 async def ping(ctx):
