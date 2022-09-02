@@ -22,5 +22,5 @@ then
         echo
         touch "uses.txt"
         echo "0" > "uses.txt"
-
+    fi
 fi
