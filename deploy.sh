@@ -13,4 +13,14 @@ then
     # The user agreed
     git pull
     pm2 restart discord-test-your-luck
+
+    if [ -f uses.txt ]
+    then
+        echo "Uses.txt already exists! Skipping!"
+    else
+        read -p "It looks like you are missing uses.txt, would you like to create it? (y/N) " -n 1 -r
+        echo
+        touch "uses.txt"
+        echo "0" > "uses.txt"
+
 fi
