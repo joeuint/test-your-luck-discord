@@ -72,9 +72,6 @@ async def test_luck(ctx):
     won = False
     if rand_num == WIN:
         won = True
-        print("WIN")
-    else:
-        print("Loser")
 
     # Generate a cool embed
     description = "Congrats you won contact <@457910942114512930> to claim!" if won else "You lost lol"
