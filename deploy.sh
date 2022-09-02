@@ -20,7 +20,13 @@ then
     else
         read -p "It looks like you are missing uses.txt, would you like to create it? (y/N) " -n 1 -r
         echo
-        touch "uses.txt"
-        echo "0" > "uses.txt"
+        if [[ $REPLY =~ ^[Yy]$ ]]
+        then
+            touch "uses.txt"
+            echo "0" > "uses.txt"
+            echo "Created uses.txt"
+        else
+            echo "Skipped creation of uses.txt. Please note that the file is required and should have a number in it."
+        fi
     fi
 fi
